@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${eiko.variable} grid min-h-dvh grid-rows-[min-content_1fr] bg-background font-sans text-foreground`}
+        className={`${inter.variable} ${eiko.variable} dark grid min-h-dvh grid-rows-[min-content_14rem_1fr] bg-background font-sans text-foreground`}
       >
         {children}
       </body>
