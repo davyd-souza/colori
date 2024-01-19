@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+    --background: 0 0% 96%;
+    --foreground: 240 5% 7%;
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+    --palette-1: 0 100% 50%;
+    --palette-2: 60 100% 50%;
+    --palette-3: 120 100% 50%;
+    --palette-4: 240 100% 50%;
+    --palette-5: 300 100% 50%;
+  }
+  
+  .dark {
+    --background: 240 5% 7%;
+    --foreground: 0 0% 96%;
+  }
+
+  ::selection {
+    background-color: color-mix(in hsl longer hue, currentColor 10%, hsl(0, 0%, 45%, 1));
+  } 
+}   
