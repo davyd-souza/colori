@@ -32,7 +32,7 @@ const config: Config = {
 
       backgroundImage: {
         'palette-gradient':
-          'linear-gradient(to right, hsl(var(--palette-1)), hsl(var(--palette-2)), hsl(var(--palette-3)), hsl(var(--palette-4)), hsl(var(--palette-5)))',
+          'linear-gradient(to right, hsl(var(--palette-1)) 19%, hsl(var(--palette-2)) 21% 39%, hsl(var(--palette-3)) 41% 59%, hsl(var(--palette-4)) 61% 79%, hsl(var(--palette-5)) 81% 100%)',
       },
 
       fontFamily: {
