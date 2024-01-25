@@ -14,6 +14,13 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
 
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+
+        border: 'hsl(var(--border))',
+
         palette: {
           1: 'hsl(var(--palette-1))',
           2: 'hsl(var(--palette-2))',
@@ -46,6 +53,7 @@ const config: Config = {
   },
 
   plugins: [
+    require('tailwindcss-animate'),
     plugin(function ({ addUtilities }) {
       addUtilities({
         '.preserve-3d': {
