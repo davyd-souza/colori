@@ -10,6 +10,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 4%;
     
+    --muted: 240 4.8% 96%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 96%;
+    --accent-foreground: 240 6% 10%;
+
+    --ring: 240 6% 10%;
+
+    --input: 240 6% 90%;
+
     --border: 240 6% 96%;
   }
   
@@ -19,6 +29,16 @@
 
     --popover: 240 10% 4%;
     --popover-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 3.7% 16%;
+    --accent-foreground: 0 0% 98%;
+
+    --ring: 240 5% 84%;
+
+    --input: 240 3.7% 16%;
 
     --border: 240 4% 16%;
   }
