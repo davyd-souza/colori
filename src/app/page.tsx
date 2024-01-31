@@ -38,7 +38,7 @@ export default function Home({
       <div className="px-4 palettes" style={styles}>
         <div
           aria-label="canvas"
-          className="h-full min-h-52 w-full min-w-52 before:absolute before:inset-0 before:mx-4 before:animate-flicker before:bg-palette-gradient before:content-[''] before:mask"
+          className="w-full min-w-52 before:absolute before:inset-x-0 before:bottom-[40rem] before:top-0 before:mx-4 before:animate-flicker before:bg-palette-gradient before:content-[''] before:mask"
         />
       </div>
 
