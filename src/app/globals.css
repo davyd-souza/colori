@@ -11,12 +11,6 @@
     --popover-foreground: 240 10% 4%;
     
     --border: 240 6% 96%;
-
-    --palette-1: 0 100% 50%;
-    --palette-2: 60 100% 50%;
-    --palette-3: 120 100% 50%;
-    --palette-4: 240 100% 50%;
-    --palette-5: 300 100% 50%;
   }
   
   .dark {
@@ -31,5 +25,5 @@
 
   ::selection {
     background-color: color-mix(in hsl longer hue, currentColor 10%, hsl(0, 0%, 45%, 1));
-  } 
+  }
 }

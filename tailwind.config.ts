@@ -65,6 +65,14 @@ const config: Config = {
           '-webkit-mask-composite': 'source-in, xor',
           'mask-composite': 'intersect',
         },
+
+        '.palettes': {
+          '--palette-1': '0 100% 50%',
+          '--palette-2': '60 100% 50%',
+          '--palette-3': '120 100% 50%',
+          '--palette-4': '240 100% 50%',
+          '--palette-5': '300 100% 50%',
+        },
       })
     }),
   ],
