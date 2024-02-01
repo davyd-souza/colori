@@ -3,6 +3,7 @@
 import { HexColorPicker } from 'react-colorful'
 import { ReactNode, useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
+import { parseToHsl, parseToRgb } from 'polished'
 
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import {
@@ -15,7 +16,7 @@ import {
 import { Input } from './input'
 
 import { Clipboard } from '@/assets/icons/clipboard'
-import { parseToHsl, parseToRgb } from 'polished'
+import { Check } from '@/assets/icons/check'
 
 type ColorSelectProps = {
   id: number
@@ -28,6 +29,7 @@ type ColorModel = 'hex' | 'rgb' | 'hsl'
 export function ColorSelect({ id, color, children }: ColorSelectProps) {
   const [hexColor, setHexColor] = useState(`#${color}`)
   const [colorModel, setColorModel] = useState<ColorModel>('hex')
+  const [copied, setCopied] = useState<boolean>(false)
 
   const searchParams = useSearchParams()
   const router = useRouter()
@@ -79,6 +81,15 @@ export function ColorSelect({ id, color, children }: ColorSelectProps) {
     router.replace(`/?${params}`, { scroll: false })
   }
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(displayValue)
+    setCopied(true)
+
+    setTimeout(() => {
+      setCopied(false)
+    }, 2000)
+  }
+
   return (
     <Popover>
       <PopoverTrigger>{children}</PopoverTrigger>
@@ -113,8 +124,12 @@ export function ColorSelect({ id, color, children }: ColorSelectProps) {
           </div>
 
           <div className="flex justify-center gap-2">
-            <button>
-              <Clipboard />
+            <button onClick={handleCopy}>
+              {copied ? (
+                <Check className="size-6 text-popover-foreground" />
+              ) : (
+                <Clipboard className="size-6 text-popover-foreground" />
+              )}
             </button>
 
             <div
