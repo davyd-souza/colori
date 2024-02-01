@@ -5,3 +5,6 @@
 - [x] Popover should have a display to show user which color is selecting
 - [x] After user releases click from color selection update URL search param
 - [ ] Popover and color name should follow color accessibility rule
+- [ ] Copy value from input to clipboard
+- [x] Have different color models: Hex, HSL & RGB
+- [ ] Theme switcher
