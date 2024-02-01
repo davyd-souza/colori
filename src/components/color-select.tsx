@@ -41,7 +41,7 @@ export function ColorSelect({ id, color, children }: ColorSelectProps) {
     }
     case 'hsl': {
       const { hue, saturation, lightness } = parseToHsl(hexColor)
-      displayValue = `${hue}, ${(saturation * 100).toFixed(2)}%, ${(lightness * 100).toFixed(2)}%`
+      displayValue = `${hue.toFixed(1)}, ${(saturation * 100).toFixed(1)}%, ${(lightness * 100).toFixed(1)}%`
       break
     }
     case 'rgb': {
