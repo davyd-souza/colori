@@ -38,11 +38,14 @@ export default function Home({
       <div className="px-4 palettes" style={styles}>
         <div
           aria-label="canvas"
-          className="w-full min-w-52 before:absolute before:inset-x-0 before:bottom-[40rem] before:top-0 before:mx-4 before:animate-flicker before:bg-palette-gradient before:content-[''] before:mask"
+          className="w-full min-w-52 before:absolute before:inset-x-0 before:bottom-[65vh] before:top-12 before:mx-4 before:animate-flicker before:bg-palette-gradient-t before:content-[''] before:mask md:before:top-0 md:before:bg-palette-gradient-r"
         />
       </div>
 
-      <main className="mb-4 grid grid-cols-5 px-4 palettes" style={styles}>
+      <main
+        className="mb-4 grid grid-rows-5 px-4 palettes md:grid-cols-5 md:grid-rows-1"
+        style={styles}
+      >
         {colorsArray.map((color, index) => (
           <PaletteColor key={color} color={color} id={index + 1} />
         ))}

@@ -45,8 +45,10 @@ const config: Config = {
       },
 
       backgroundImage: {
-        'palette-gradient':
+        'palette-gradient-r':
           'linear-gradient(to right, hsl(var(--palette-1)) 19%, hsl(var(--palette-2)) 21% 39%, hsl(var(--palette-3)) 41% 59%, hsl(var(--palette-4)) 61% 79%, hsl(var(--palette-5)) 81% 100%)',
+        'palette-gradient-t':
+          'linear-gradient(to bottom, hsl(var(--palette-1)) 20%, hsl(var(--palette-2)) 20% 40%, hsl(var(--palette-3)) 40% 60%, hsl(var(--palette-4)) 60% 80%, hsl(var(--palette-5)) 80% 100%)',
       },
 
       fontFamily: {
