@@ -1,21 +1,51 @@
 import { redirect } from 'next/navigation'
+import { CSSProperties } from 'react'
+import { parseToHsl, rgbToColorString } from 'polished'
 
 import { PaletteColor } from '@/components/palette-color'
-import { CSSProperties } from 'react'
-import { parseToHsl } from 'polished'
+import { RandomColorGenerator } from '@/components/event/random-color-generator'
 
-export default function Home({
+export default async function Home({
   searchParams,
 }: {
   searchParams: { [key: string]: string | undefined }
 }) {
-  const colors = searchParams.colors
+  const { result }: { result: Array<Array<number>> } = await fetch(
+    'http://colormind.io/api/',
+    {
+      method: 'POST',
+      mode: 'cors',
+      body: JSON.stringify({
+        model: 'default',
+        input: ['N', 'N', 'N', 'N', 'N'],
+      }),
+      cache: 'no-store',
+    },
+  ).then((response) => response.json())
 
-  if (!colors) {
-    redirect('/?colors=ff0000-ffff00-00ff00-0000ff-ff00ff')
+  const colorsParams = searchParams.colors
+
+  if (!colorsParams) {
+    if (!result) {
+      redirect('/?colors=ff0000-ffff00-00ff00-0000ff-ff00ff')
+    }
+
+    const hexColorArray: string[] = []
+
+    for (const [red, green, blue] of result) {
+      const hexColor = rgbToColorString({ red, green, blue })
+
+      const color = hexColor.replace('#', '')
+
+      hexColorArray.push(color)
+    }
+
+    const redirectColors = hexColorArray.join('-')
+
+    redirect(`/?colors=${redirectColors}`)
   }
 
-  const colorsArray = colors.split('-')
+  const colorsArray = colorsParams.split('-')
 
   const styles: CSSProperties = {}
 
@@ -30,7 +60,7 @@ export default function Home({
   })
 
   return (
-    <>
+    <RandomColorGenerator>
       <header className="z-10 flex items-center bg-background/50 px-4 py-2 backdrop-blur-sm">
         <h1 className="font-display text-2xl">Colori</h1>
       </header>
@@ -50,6 +80,6 @@ export default function Home({
           <PaletteColor key={color} color={color} id={index + 1} />
         ))}
       </main>
-    </>
+    </RandomColorGenerator>
   )
 }

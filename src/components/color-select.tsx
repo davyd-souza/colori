@@ -1,7 +1,7 @@
 'use client'
 
 import { HexColorPicker } from 'react-colorful'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { parseToHsl, parseToRgb } from 'polished'
 
@@ -90,11 +90,15 @@ export function ColorSelect({ id, color, children }: ColorSelectProps) {
     }, 2000)
   }
 
+  useEffect(() => {
+    setHexColor(`#${color}`)
+  }, [color])
+
   return (
     <Popover>
       <PopoverTrigger>{children}</PopoverTrigger>
 
-      <PopoverContent className="space-y-2">
+      <PopoverContent side="top" className="space-y-2">
         <HexColorPicker
           color={hexColor}
           onChange={setHexColor}

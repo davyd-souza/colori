@@ -8,4 +8,4 @@
 - [x] Copy value from input to clipboard
 - [x] Have different color models: Hex, HSL & RGB
 - [ ] Theme switcher
-- [ ] Press `space bar` to generate a new color palette
+- [x] Press `space bar` to generate a new color palette

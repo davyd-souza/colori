@@ -38,10 +38,6 @@ export function PaletteColor({ id, color }: PaletteColorProps) {
           {color.toUpperCase()}
         </p>
       </ColorSelect>
-
-      {/* <p className="text-sm font-medium text-[#141414]">
-        {data && data.name.value}
-      </p> */}
     </div>
   )
 }
