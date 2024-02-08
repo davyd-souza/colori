@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Providers } from './providers'
 import './globals.css'
 import { eiko, inter } from '@/styles/font'
 
@@ -15,9 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${eiko.variable} dark grid min-h-dvh grid-rows-[min-content_14rem_1fr] bg-background font-sans text-foreground`}
+        className={`${inter.variable} ${eiko.variable} grid min-h-dvh grid-rows-[min-content_14rem_1fr] bg-background font-sans text-foreground`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

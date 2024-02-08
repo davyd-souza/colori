@@ -4,6 +4,7 @@ import { parseToHsl, rgbToColorString } from 'polished'
 
 import { PaletteColor } from '@/components/palette-color'
 import { RandomColorGenerator } from '@/components/event/random-color-generator'
+import { Header } from '@/components/header'
 
 export default async function Home({
   searchParams,
@@ -61,9 +62,7 @@ export default async function Home({
 
   return (
     <RandomColorGenerator>
-      <header className="z-10 flex items-center bg-background/50 px-4 py-2 backdrop-blur-sm">
-        <h1 className="font-display text-2xl">Colori</h1>
-      </header>
+      <Header />
 
       <div className="px-4 palettes" style={styles}>
         <div
